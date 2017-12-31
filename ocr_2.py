@@ -14,23 +14,23 @@ tessdata_dir_config = '--tessdata-dir "C://tesseract//tessdata"'
 filename=r'C:\Users\Rob\dev\VisionSystems\OCR\test4.jpg'
 
 image=cv2.imread(filename)
-cv2.imshow('Original',image)
-cv2.waitKey(0)
+#cv2.imshow('Original',image)
+#cv2.waitKey(0)
 
 img=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-cv2.imshow('GrayScaled',img)
-cv2.waitKey(0)
+#cv2.imshow('GrayScaled',img)
+#cv2.waitKey(0)
 
 # Apply dilation and erosion to remove some noise
 kernel = np.ones((1, 1), np.uint8)
 #img = cv2.dilate(img, kernel, iterations=1)
 img = cv2.erode(img, kernel, iterations=5)
-cv2.imshow('Eroded',img)
-cv2.waitKey(0)
+#cv2.imshow('Eroded',img)
+#cv2.waitKey(0)
 
 img=cv2.medianBlur(img,3 )
-cv2.imshow('Blurred',img)
-cv2.waitKey(0)
+#cv2.imshow('Blurred',img)
+#cv2.waitKey(0)
 # Write image after removed noise
 #cv2.imwrite(filename + "removed_noise.png", img)
 """
@@ -45,19 +45,19 @@ cv2.imwrite(filename + "thres.png", img)
 gray= cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 161, 1)
 
 #gray=cv2.threshold(img,0,255,cv2.THRESH_BINARY|cv2.THRESH_OTSU)[1]
-cv2.imshow('Thresholded',gray)
-cv2.waitKey(0)
+#cv2.imshow('Thresholded',gray)
+#cv2.waitKey(0)
 
 # Apply dilation and erosion to remove some noise
 kernel = np.ones((1, 1), np.uint8)
 #img = cv2.dilate(img, kernel, iterations=1)
 img = cv2.erode(gray, kernel, iterations=5)
-cv2.imshow('Eroded',img)
-cv2.waitKey(0)
+#cv2.imshow('Eroded',img)
+#cv2.waitKey(0)
 
 img=cv2.medianBlur(img,3 )
-cv2.imshow('Blurred',img)
-cv2.waitKey(0)
+#cv2.imshow('Blurred',img)
+#cv2.waitKey(0)
 
 
 filename='script_img.png'
