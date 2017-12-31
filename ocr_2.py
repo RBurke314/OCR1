@@ -11,7 +11,7 @@ pytesseract.pytesseract.tesseract_cmd = 'C://tesseract//tesseract.exe'
 tessdata_dir_config = '--tessdata-dir "C://tesseract//tessdata"'
 
 
-filename=r'C:\Users\Rob\dev\VisionSystems\OCR\test4.jpg'
+filename=r'test4.jpg'
 
 image=cv2.imread(filename)
 #cv2.imshow('Original',image)
