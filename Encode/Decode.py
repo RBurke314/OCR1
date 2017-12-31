@@ -42,6 +42,9 @@ if __name__ == "__main__":
 # decoding with for instance   jpg1 = base64.b64decode(jpg1_b64)
 # tested with Python24       vegaseat     06oct2005
 import base64
+import cv2
+from PIL import Image
+from io import BytesIO
 # pick a jpeg file you have and want ...
 jpgfile = "C:/Users/Rob/dev/VisionSystems/OCR/test5.jpg"
 # note: binary read "rb" is required!
@@ -56,5 +59,13 @@ try:
     fout = open(filename, "w")
     fout.write(jpg_text)
     fout.close()
+
+
+
+
+
+
+
+
 except IOError:
     print "File %s could not be saved!" % filename

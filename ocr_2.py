@@ -10,8 +10,13 @@ pytesseract.pytesseract.tesseract_cmd = 'C://tesseract//tesseract.exe'
 
 tessdata_dir_config = '--tessdata-dir "C://tesseract//tessdata"'
 
+newjpgtxt = open(txtapp,"rb").read()
+g= open("out.jpg","w")
+g.write(base64.decodestring(newjpgtxt))
+g.close()
 
-filename=r'test4.jpg'
+
+filename=r'out.jpg'
 
 image=cv2.imread(filename)
 #cv2.imshow('Original',image)
