@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7628605f-d220-4770-a3b4-d53c21bb4baa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Encode/example.jpg" afterPath="$PROJECT_DIR$/Encode/example.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Encode/Decode.py" afterPath="$PROJECT_DIR$/Encode/Decode.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ocr_2.py" afterPath="$PROJECT_DIR$/ocr_2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +53,8 @@
       <file leaf-file-name="ocr_2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ocr_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="187">
+              <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="e#2#23#0" expanded="true" />
               </folding>
@@ -513,8 +510,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ocr_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="187">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <element signature="e#2#23#0" expanded="true" />
           </folding>

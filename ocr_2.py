@@ -14,6 +14,7 @@ newjpgtxt = open(txtapp,"rb").read()
 g= open("out.jpg","w")
 g.write(base64.decodestring(newjpgtxt))
 g.close()
+#
 
 
 filename=r'out.jpg'
