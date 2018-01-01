@@ -34,11 +34,19 @@ cv2.imshow('Thres',gray)
 cv2.waitKey(0)
 # Apply dilation and erosion to remove some noise
 kernel = np.ones((1, 1), np.uint8)
-img = cv2.erode(gray, kernel, iterations=5)
+img = cv2.dilate(gray, kernel, iterations=2)
+cv2.imshow('Dilate 1',img)
+cv2.waitKey(0)
+img = cv2.erode(img, kernel, iterations=5)
 cv2.imshow('Erode',img)
 cv2.waitKey(0)
 img = cv2.dilate(img, kernel, iterations=2)
-cv2.imshow('Dilate',img)
+cv2.imshow('Dilate 2',img)
+cv2.waitKey(0)
+
+img=cv2.medianBlur(img,1
+                   )
+cv2.imshow('blur',img)
 cv2.waitKey(0)
 
 filename2='script_img2.jpg'
