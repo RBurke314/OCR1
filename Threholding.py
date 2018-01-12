@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('C:/Users/Rob/dev/VisionSystems/OCR/test3.jpg')
+img = cv2.imread('C:/Users/Rob/dev/VisionSystems/OCR/OCR1/test3.jpg')
 
 grayscaled = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 

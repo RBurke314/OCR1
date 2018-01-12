@@ -16,42 +16,61 @@ g.write(base64.decodestring(newjpgtxt))
 g.close()
 filename=r'out.jpg'"""
 
-filename=r'test4.jpg'
+#filename=r'test4.jpg'
+filename=r'img_set_1.jpg'
+maskname = r'img_set_1.jpg_Mask2.jpg'
+mask=cv2.imread(maskname)
+mask = cv2.cvtColor(mask,cv2.COLOR_BGR2GRAY)
+cv2.imshow('Mask',mask)
+cv2.waitKey(0)
 
 image=cv2.imread(filename)
 cv2.imshow('Original',image)
 cv2.waitKey(0)
+
+#res = cv2.bitwise_and(frame,frame, mask= mask)
 
 #////////////////////////////////////////////////
 img=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 cv2.imshow('Gray',img)
 cv2.waitKey(0)
 
-_,gray = cv2.threshold(img,145,255,cv2.THRESH_BINARY)
+img = cv2.medianBlur(img,1)
+#_,gray = cv2.threshold(img,145,255,cv2.THRESH_BINARY)
+gray = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2) #11,2
 
 #gray= cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 161, 1)
 cv2.imshow('Thres',gray)
 cv2.waitKey(0)
+
+image_final = cv2.bitwise_and(mask, mask, mask=gray)
+cv2.imshow('And', image_final)
+cv2.waitKey(0)
+
 # Apply dilation and erosion to remove some noise
-kernel = np.ones((1, 1), np.uint8)
-img = cv2.dilate(gray, kernel, iterations=2)
+kernel = np.ones((2, 2), np.uint8)
+#img = cv2.dilate(image_final, kernel, iterations=1)
 cv2.imshow('Dilate 1',img)
 cv2.waitKey(0)
-img = cv2.erode(img, kernel, iterations=5)
+#img = cv2.erode(img, kernel, iterations=5)
 cv2.imshow('Erode',img)
 cv2.waitKey(0)
-img = cv2.dilate(img, kernel, iterations=2)
+#img = cv2.dilate(img, kernel, iterations=2)
 cv2.imshow('Dilate 2',img)
 cv2.waitKey(0)
 
-img=cv2.medianBlur(img,1
-                   )
+#img=cv2.medianBlur(img,1)
 cv2.imshow('blur',img)
 cv2.waitKey(0)
 
+
+
+
 filename2='script_img2.jpg'
-cv2.imwrite(filename2,img)
+cv2.imwrite(filename2,mask)
 img = Image.open(filename2)
+
+
 
 #print(pytesseract.image_to_string(Image.open('C:/Users/Rob/dev/VisionSystems/OCR/test1.png'),lang='eng', config = tessdata_dir_config))
 print(pytesseract.image_to_string(img,lang='eng', config = tessdata_dir_config))

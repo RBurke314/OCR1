@@ -11,12 +11,12 @@ pytesseract.pytesseract.tesseract_cmd = 'C://tesseract//tesseract.exe'
 tessdata_dir_config = '--tessdata-dir "C://tesseract//tessdata"'
 
 """newjpgtxt = open(txtapp,"rb").read()
-g= open("out.jpg","w")
+g= open("out.j                                                                                                                             pg","w")
 g.write(base64.decodestring(newjpgtxt))
 g.close()
 filename=r'out.jpg'"""
 
-filename=r'test4.jpg'
+"""filename=r'test4.jpg'
 
 image=cv2.imread(filename)
 cv2.imshow('Original',image)
@@ -43,6 +43,22 @@ cv2.waitKey(0)
 
 filename2='script_img2.jpg'
 cv2.imwrite(filename2,img)
+img = Image.open(filename2)"""
+myList  = range(3, 1000)
+oddsList = [x for x in myList if x % 2 != 0]
+NewValue = (((70 - 0) * 100) / 100) + -50
+source = r'C:/Users/Rob/dev/VisionSystems/OCR/OCR1/DataBase/test/test_snippet_3.png'
+image = cv2.imread(source)
+cv2.imshow('Origin',image)
+cv2.waitKey(0)
+resized = cv2.resize(image, None, fx=2, fy=2, interpolation= cv2.INTER_CUBIC)
+gray=cv2.cvtColor(resized,cv2.COLOR_BGR2GRAY)
+blur = cv2.blur(gray, (1, 1))
+th2 = cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, oddsList[33], NewValue)
+cv2.imshow('Thresh',th2)
+cv2.waitKey(0)
+filename2='script_img2.png'
+cv2.imwrite(filename2,th2)
 img = Image.open(filename2)
 
 #print(pytesseract.image_to_string(Image.open('C:/Users/Rob/dev/VisionSystems/OCR/test1.png'),lang='eng', config = tessdata_dir_config))
